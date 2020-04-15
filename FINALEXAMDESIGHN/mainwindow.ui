@@ -29,7 +29,7 @@
    <widget class="QWidget" name="widget_4" native="true">
     <property name="geometry">
      <rect>
-      <x>560</x>
+      <x>10</x>
       <y>10</y>
       <width>351</width>
       <height>511</height>
@@ -47,16 +47,16 @@
     <widget class="QWidget" name="widget_5" native="true">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>0</y>
+       <x>11</x>
+       <y>11</y>
        <width>331</width>
-       <height>211</height>
+       <height>191</height>
       </rect>
      </property>
      <widget class="QLCDNumber" name="TimeClock_Min">
       <property name="geometry">
        <rect>
-        <x>190</x>
+        <x>180</x>
         <y>0</y>
         <width>141</width>
         <height>121</height>
@@ -85,7 +85,7 @@
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>150</x>
+        <x>140</x>
         <y>10</y>
         <width>51</width>
         <height>81</height>
@@ -108,7 +108,7 @@
        <x>10</x>
        <y>220</y>
        <width>331</width>
-       <height>141</height>
+       <height>121</height>
       </rect>
      </property>
      <property name="title">
@@ -119,26 +119,13 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>370</y>
+       <y>350</y>
        <width>331</width>
-       <height>91</height>
+       <height>101</height>
       </rect>
      </property>
      <property name="title">
       <string>提示</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton">
-     <property name="geometry">
-      <rect>
-       <x>250</x>
-       <y>470</y>
-       <width>93</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>退出</string>
      </property>
     </widget>
     <widget class="QPushButton" name="BtnClassOver">
@@ -154,7 +141,7 @@
       <string>自习</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="BtnClassBegin">
      <property name="geometry">
       <rect>
        <x>130</x>
@@ -165,6 +152,19 @@
      </property>
      <property name="text">
       <string>上课</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>470</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>退出</string>
      </property>
     </widget>
    </widget>
@@ -182,9 +182,7 @@
     <property name="title">
      <string>切换</string>
     </property>
-    <addaction name="actionCLASS"/>
-    <addaction name="actionAFTERCLASS"/>
-    <addaction name="actionCONNECT"/>
+    <addaction name="action"/>
    </widget>
    <widget class="QMenu" name="menu_2">
     <property name="title">
@@ -218,6 +216,11 @@
    </property>
   </action>
   <action name="actionCONNECT">
+   <property name="text">
+    <string>联系老师</string>
+   </property>
+  </action>
+  <action name="action">
    <property name="text">
     <string>联系老师</string>
    </property>
