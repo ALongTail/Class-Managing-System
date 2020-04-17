@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLCDNumber>
@@ -51,24 +52,26 @@ public:
     QLabel *label_date;
     QWidget *widget;
     QGridLayout *gridLayout_2;
-    QLabel *time7;
-    QLabel *time4;
-    QLabel *time3;
-    QLabel *time6;
-    QLabel *time2;
     QLabel *time5;
+    QLabel *time2;
+    QLabel *time4;
     QLabel *time8;
+    QLabel *time6;
     QLabel *time1;
+    QLabel *time3;
+    QLabel *time7;
+    QFrame *line;
     QWidget *widget_2;
     QGridLayout *gridLayout_3;
+    QLabel *class7;
+    QLabel *class4;
+    QLabel *class3;
     QLabel *class1;
     QLabel *class2;
-    QLabel *class3;
-    QLabel *class4;
     QLabel *class5;
-    QLabel *class6;
-    QLabel *class7;
     QLabel *class8;
+    QLabel *class6;
+    QFrame *line_2;
     QMenuBar *menubar;
     QMenu *menu;
     QMenu *menu_2;
@@ -189,45 +192,60 @@ public:
         widget->setObjectName(QString::fromUtf8("widget"));
         gridLayout_2 = new QGridLayout(widget);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        time7 = new QLabel(widget);
-        time7->setObjectName(QString::fromUtf8("time7"));
+        time5 = new QLabel(widget);
+        time5->setObjectName(QString::fromUtf8("time5"));
+        time5->setAlignment(Qt::AlignCenter);
 
-        gridLayout_2->addWidget(time7, 6, 0, 1, 1);
-
-        time4 = new QLabel(widget);
-        time4->setObjectName(QString::fromUtf8("time4"));
-
-        gridLayout_2->addWidget(time4, 3, 0, 1, 1);
-
-        time3 = new QLabel(widget);
-        time3->setObjectName(QString::fromUtf8("time3"));
-
-        gridLayout_2->addWidget(time3, 2, 0, 1, 1);
-
-        time6 = new QLabel(widget);
-        time6->setObjectName(QString::fromUtf8("time6"));
-
-        gridLayout_2->addWidget(time6, 5, 0, 1, 1);
+        gridLayout_2->addWidget(time5, 5, 0, 1, 1);
 
         time2 = new QLabel(widget);
         time2->setObjectName(QString::fromUtf8("time2"));
+        time2->setAlignment(Qt::AlignCenter);
 
         gridLayout_2->addWidget(time2, 1, 0, 1, 1);
 
-        time5 = new QLabel(widget);
-        time5->setObjectName(QString::fromUtf8("time5"));
+        time4 = new QLabel(widget);
+        time4->setObjectName(QString::fromUtf8("time4"));
+        time4->setAlignment(Qt::AlignCenter);
 
-        gridLayout_2->addWidget(time5, 4, 0, 1, 1);
+        gridLayout_2->addWidget(time4, 3, 0, 1, 1);
 
         time8 = new QLabel(widget);
         time8->setObjectName(QString::fromUtf8("time8"));
+        time8->setAlignment(Qt::AlignCenter);
 
-        gridLayout_2->addWidget(time8, 7, 0, 1, 1);
+        gridLayout_2->addWidget(time8, 8, 0, 1, 1);
+
+        time6 = new QLabel(widget);
+        time6->setObjectName(QString::fromUtf8("time6"));
+        time6->setAlignment(Qt::AlignCenter);
+
+        gridLayout_2->addWidget(time6, 6, 0, 1, 1);
 
         time1 = new QLabel(widget);
         time1->setObjectName(QString::fromUtf8("time1"));
+        time1->setAlignment(Qt::AlignCenter);
 
         gridLayout_2->addWidget(time1, 0, 0, 1, 1);
+
+        time3 = new QLabel(widget);
+        time3->setObjectName(QString::fromUtf8("time3"));
+        time3->setAlignment(Qt::AlignCenter);
+
+        gridLayout_2->addWidget(time3, 2, 0, 1, 1);
+
+        time7 = new QLabel(widget);
+        time7->setObjectName(QString::fromUtf8("time7"));
+        time7->setAlignment(Qt::AlignCenter);
+
+        gridLayout_2->addWidget(time7, 7, 0, 1, 1);
+
+        line = new QFrame(widget);
+        line->setObjectName(QString::fromUtf8("line"));
+        line->setFrameShape(QFrame::HLine);
+        line->setFrameShadow(QFrame::Sunken);
+
+        gridLayout_2->addWidget(line, 4, 0, 1, 1);
 
 
         gridLayout_4->addWidget(widget, 0, 1, 1, 1);
@@ -236,45 +254,60 @@ public:
         widget_2->setObjectName(QString::fromUtf8("widget_2"));
         gridLayout_3 = new QGridLayout(widget_2);
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
+        class7 = new QLabel(widget_2);
+        class7->setObjectName(QString::fromUtf8("class7"));
+        class7->setAlignment(Qt::AlignCenter);
+
+        gridLayout_3->addWidget(class7, 7, 0, 1, 1);
+
+        class4 = new QLabel(widget_2);
+        class4->setObjectName(QString::fromUtf8("class4"));
+        class4->setAlignment(Qt::AlignCenter);
+
+        gridLayout_3->addWidget(class4, 3, 0, 1, 1);
+
+        class3 = new QLabel(widget_2);
+        class3->setObjectName(QString::fromUtf8("class3"));
+        class3->setAlignment(Qt::AlignCenter);
+
+        gridLayout_3->addWidget(class3, 2, 0, 1, 1);
+
         class1 = new QLabel(widget_2);
         class1->setObjectName(QString::fromUtf8("class1"));
+        class1->setAlignment(Qt::AlignCenter);
 
         gridLayout_3->addWidget(class1, 0, 0, 1, 1);
 
         class2 = new QLabel(widget_2);
         class2->setObjectName(QString::fromUtf8("class2"));
+        class2->setAlignment(Qt::AlignCenter);
 
         gridLayout_3->addWidget(class2, 1, 0, 1, 1);
 
-        class3 = new QLabel(widget_2);
-        class3->setObjectName(QString::fromUtf8("class3"));
-
-        gridLayout_3->addWidget(class3, 2, 0, 1, 1);
-
-        class4 = new QLabel(widget_2);
-        class4->setObjectName(QString::fromUtf8("class4"));
-
-        gridLayout_3->addWidget(class4, 3, 0, 1, 1);
-
         class5 = new QLabel(widget_2);
         class5->setObjectName(QString::fromUtf8("class5"));
+        class5->setAlignment(Qt::AlignCenter);
 
-        gridLayout_3->addWidget(class5, 4, 0, 1, 1);
-
-        class6 = new QLabel(widget_2);
-        class6->setObjectName(QString::fromUtf8("class6"));
-
-        gridLayout_3->addWidget(class6, 5, 0, 1, 1);
-
-        class7 = new QLabel(widget_2);
-        class7->setObjectName(QString::fromUtf8("class7"));
-
-        gridLayout_3->addWidget(class7, 6, 0, 1, 1);
+        gridLayout_3->addWidget(class5, 5, 0, 1, 1);
 
         class8 = new QLabel(widget_2);
         class8->setObjectName(QString::fromUtf8("class8"));
+        class8->setAlignment(Qt::AlignCenter);
 
-        gridLayout_3->addWidget(class8, 7, 0, 1, 1);
+        gridLayout_3->addWidget(class8, 8, 0, 1, 1);
+
+        class6 = new QLabel(widget_2);
+        class6->setObjectName(QString::fromUtf8("class6"));
+        class6->setAlignment(Qt::AlignCenter);
+
+        gridLayout_3->addWidget(class6, 6, 0, 1, 1);
+
+        line_2 = new QFrame(widget_2);
+        line_2->setObjectName(QString::fromUtf8("line_2"));
+        line_2->setFrameShape(QFrame::HLine);
+        line_2->setFrameShadow(QFrame::Sunken);
+
+        gridLayout_3->addWidget(line_2, 4, 0, 1, 1);
 
 
         gridLayout_4->addWidget(widget_2, 0, 2, 1, 1);
@@ -318,22 +351,22 @@ public:
         remind->setText(QString());
         BtnClassOver->setText(QCoreApplication::translate("MainWindow", "\350\207\252\344\271\240", nullptr));
         label_date->setText(QCoreApplication::translate("MainWindow", "0000\345\271\26400\346\234\21000\346\227\245", nullptr));
-        time7->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        time4->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        time3->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        time6->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        time2->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         time5->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        time2->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        time4->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         time8->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        time6->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         time1->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        time3->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        time7->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        class7->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        class4->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        class3->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         class1->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         class2->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        class3->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        class4->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         class5->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        class6->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        class7->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         class8->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        class6->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         menu->setTitle(QCoreApplication::translate("MainWindow", "\345\210\207\346\215\242", nullptr));
         menu_2->setTitle(QCoreApplication::translate("MainWindow", "\345\270\256\345\212\251", nullptr));
     } // retranslateUi

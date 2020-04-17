@@ -16,15 +16,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    homework.cpp \
     insert.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    homework.h \
     insert.h \
     mainwindow.h
 
 FORMS += \
+    homework.ui \
     insert.ui \
     mainwindow.ui
 
