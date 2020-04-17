@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>912</width>
-    <height>582</height>
+    <width>968</width>
+    <height>628</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -26,155 +26,271 @@
      <verstretch>1</verstretch>
     </sizepolicy>
    </property>
-   <widget class="QWidget" name="widget_4" native="true">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>351</width>
-      <height>511</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-      <horstretch>1</horstretch>
-      <verstretch>1</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <widget class="QWidget" name="widget_5" native="true">
-     <property name="geometry">
-      <rect>
-       <x>11</x>
-       <y>11</y>
-       <width>331</width>
-       <height>191</height>
-      </rect>
-     </property>
-     <widget class="QLCDNumber" name="TimeClock_Min">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>0</y>
-        <width>141</width>
-        <height>121</height>
-       </rect>
+   <layout class="QGridLayout" name="gridLayout_4">
+    <item row="0" column="0">
+     <widget class="QWidget" name="widget_4" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>1</verstretch>
+       </sizepolicy>
       </property>
       <property name="autoFillBackground">
        <bool>false</bool>
       </property>
-      <property name="digitCount">
-       <number>2</number>
-      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="3" column="3">
+        <widget class="QPushButton" name="pushButton">
+         <property name="text">
+          <string>退出</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="4">
+        <widget class="QGroupBox" name="CleaningGroup">
+         <property name="title">
+          <string>值日生</string>
+         </property>
+         <widget class="QLabel" name="clean">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>371</width>
+            <height>131</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QPushButton" name="BtnClassBegin">
+         <property name="text">
+          <string>上课</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="QPushButton" name="pushButton_2">
+         <property name="text">
+          <string>录入作业</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="4">
+        <widget class="QGroupBox" name="Reminds">
+         <property name="title">
+          <string>提示</string>
+         </property>
+         <widget class="QLabel" name="remind">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>371</width>
+            <height>131</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::AutoText</enum>
+          </property>
+         </widget>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QPushButton" name="BtnClassOver">
+         <property name="text">
+          <string>自习</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" colspan="4">
+        <widget class="QWidget" name="widget_5" native="true">
+         <layout class="QGridLayout" name="gridLayout_5">
+          <item row="0" column="0">
+           <widget class="QLCDNumber" name="TimeClock_Hour">
+            <property name="digitCount">
+             <number>2</number>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLCDNumber" name="TimeClock_Min">
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="digitCount">
+             <number>2</number>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLCDNumber" name="TimeClock_Sec">
+            <property name="digitCount">
+             <number>2</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="3">
+           <widget class="QLabel" name="label_date">
+            <property name="font">
+             <font>
+              <family>Adobe Devanagari</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>0000年00月00日</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
      </widget>
-     <widget class="QLCDNumber" name="TimeClock_Hour">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>141</width>
-        <height>121</height>
-       </rect>
-      </property>
-      <property name="digitCount">
-       <number>2</number>
-      </property>
+    </item>
+    <item row="0" column="1">
+     <widget class="QWidget" name="widget" native="true">
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="6" column="0">
+        <widget class="QLabel" name="time7">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="time4">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="time3">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="time6">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="time2">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="time5">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="time8">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="time1">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>140</x>
-        <y>10</y>
-        <width>51</width>
-        <height>81</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>AcadEref</family>
-        <pointsize>48</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>:</string>
-      </property>
+    </item>
+    <item row="0" column="2">
+     <widget class="QWidget" name="widget_2" native="true">
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <widget class="QLabel" name="class1">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="class2">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="class3">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="class4">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="class5">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="class6">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="class7">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="class8">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
-    </widget>
-    <widget class="QGroupBox" name="CleaningGroup">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>220</y>
-       <width>331</width>
-       <height>121</height>
-      </rect>
-     </property>
-     <property name="title">
-      <string>值日生</string>
-     </property>
-    </widget>
-    <widget class="QGroupBox" name="Reminds">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>350</y>
-       <width>331</width>
-       <height>101</height>
-      </rect>
-     </property>
-     <property name="title">
-      <string>提示</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="BtnClassOver">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>470</y>
-       <width>93</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>自习</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="BtnClassBegin">
-     <property name="geometry">
-      <rect>
-       <x>130</x>
-       <y>470</y>
-       <width>93</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>上课</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton">
-     <property name="geometry">
-      <rect>
-       <x>250</x>
-       <y>470</y>
-       <width>93</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>退出</string>
-     </property>
-    </widget>
-   </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>912</width>
+     <width>968</width>
      <height>26</height>
     </rect>
    </property>
@@ -195,16 +311,6 @@
    <addaction name="menu_2"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionCLASS">
-   <property name="text">
-    <string>课程表</string>
-   </property>
-  </action>
-  <action name="actionAFTERCLASS">
-   <property name="text">
-    <string>回家作业</string>
-   </property>
-  </action>
   <action name="actionDETAILS">
    <property name="text">
     <string>功能说明</string>
@@ -213,11 +319,6 @@
   <action name="actionABOUT">
    <property name="text">
     <string>关于..</string>
-   </property>
-  </action>
-  <action name="actionCONNECT">
-   <property name="text">
-    <string>联系老师</string>
    </property>
   </action>
   <action name="action">
