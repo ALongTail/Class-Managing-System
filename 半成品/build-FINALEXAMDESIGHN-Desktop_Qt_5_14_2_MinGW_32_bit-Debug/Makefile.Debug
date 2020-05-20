@@ -19,7 +19,7 @@ CXXFLAGS      = -fno-keep-inline-dllexport -g -std=gnu++11 -Wall -Wextra -Wextra
 INCPATH       = -I..\FINALEXAMDESIGHN -I. -ID:\QT\5.14.2\mingw73_32\include -ID:\QT\5.14.2\mingw73_32\include\QtWidgets -ID:\QT\5.14.2\mingw73_32\include\QtGui -ID:\QT\5.14.2\mingw73_32\include\QtANGLE -ID:\QT\5.14.2\mingw73_32\include\QtSql -ID:\QT\5.14.2\mingw73_32\include\QtCore -Idebug -I. -ID:\QT\5.14.2\mingw73_32\mkspecs\win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -Wl,-subsystem,windows -mthreads
-LIBS        =        D:\QT\5.14.2\mingw73_32\lib\libQt5Widgets.a D:\QT\5.14.2\mingw73_32\lib\libQt5Gui.a D:\QT\5.14.2\mingw73_32\lib\libQt5Sql.a D:\QT\5.14.2\mingw73_32\lib\libQt5Core.a  -lmingw32 D:\QT\5.14.2\mingw73_32\lib\libqtmain.a -LC:\openssl\lib -LC:\Utils\my_sql\mysql-5.7.25-win32\lib -LC:\Utils\postgresql\pgsql\lib -lshell32 
+LIBS        =        D:\QT\5.14.2\mingw73_32\lib\libQt5Widgets.a D:\QT\5.14.2\mingw73_32\lib\libQt5Gui.a D:\QT\5.14.2\mingw73_32\lib\libQt5Sql.a D:\QT\5.14.2\mingw73_32\lib\libQt5Core.a debug\FINALEXAMDESIGHN_resource_res.o  -lmingw32 D:\QT\5.14.2\mingw73_32\lib\libqtmain.a -LC:\openssl\lib -LC:\Utils\my_sql\mysql-5.7.25-win32\lib -LC:\Utils\postgresql\pgsql\lib -lshell32 
 QMAKE         = D:\QT\5.14.2\mingw73_32\bin\qmake.exe
 DEL_FILE      = del
 CHK_DIR_EXISTS= if not exist
@@ -40,7 +40,7 @@ IDC           = idc
 IDL           = midl
 ZIP           = zip -r -9
 DEF_FILE      = 
-RES_FILE      = 
+RES_FILE      = debug\FINALEXAMDESIGHN_resource_res.o
 SED           = $(QMAKE) -install sed
 MOVE          = move
 
@@ -90,8 +90,11 @@ DESTDIR_TARGET = debug\FINALEXAMDESIGHN.exe
 first: all
 all: Makefile.Debug  debug/FINALEXAMDESIGHN.exe
 
-debug/FINALEXAMDESIGHN.exe: D:/QT/5.14.2/mingw73_32/lib/libQt5Widgets.a D:/QT/5.14.2/mingw73_32/lib/libQt5Gui.a D:/QT/5.14.2/mingw73_32/lib/libQt5Sql.a D:/QT/5.14.2/mingw73_32/lib/libQt5Core.a D:/QT/5.14.2/mingw73_32/lib/libqtmain.a ui_homework.h ui_insert.h ui_mainwindow.h ui_schedule.h $(OBJECTS) 
+debug/FINALEXAMDESIGHN.exe: D:/QT/5.14.2/mingw73_32/lib/libQt5Widgets.a D:/QT/5.14.2/mingw73_32/lib/libQt5Gui.a D:/QT/5.14.2/mingw73_32/lib/libQt5Sql.a D:/QT/5.14.2/mingw73_32/lib/libQt5Core.a D:/QT/5.14.2/mingw73_32/lib/libqtmain.a ui_homework.h ui_insert.h ui_mainwindow.h ui_schedule.h $(OBJECTS) debug/FINALEXAMDESIGHN_resource_res.o
 	$(LINKER) $(LFLAGS) -o $(DESTDIR_TARGET) @object_script.FINALEXAMDESIGHN.Debug  $(LIBS)
+
+debug/FINALEXAMDESIGHN_resource_res.o: FINALEXAMDESIGHN_resource.rc
+	windres -i FINALEXAMDESIGHN_resource.rc -o debug\FINALEXAMDESIGHN_resource_res.o --include-dir=. $(DEFINES)
 
 qmake: FORCE
 	@$(QMAKE) -o Makefile.Debug ..\FINALEXAMDESIGHN\FINALEXAMDESIGHN.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -103,6 +106,7 @@ dist:
 
 clean: compiler_clean 
 	-$(DEL_FILE) debug\dbconnect.o debug\homework.o debug\insert.o debug\main.o debug\mainwindow.o debug\schedule.o debug\moc_homework.o debug\moc_insert.o debug\moc_mainwindow.o debug\moc_schedule.o
+	-$(DEL_FILE) debug\FINALEXAMDESIGHN_resource_res.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -238,6 +242,39 @@ debug/moc_homework.cpp: ../FINALEXAMDESIGHN/homework.h \
 		D:/QT/5.14.2/mingw73_32/include/QtGui/qtouchdevice.h \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qtabwidget.h \
 		D:/QT/5.14.2/mingw73_32/include/QtGui/qicon.h \
+		../FINALEXAMDESIGHN/insert.h \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QDialog \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qdialog.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QtDebug \
+		../FINALEXAMDESIGHN/dbconnect.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlDatabase \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqldatabase.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qtsqlglobal.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qtsql-config.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlQuery \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqlquery.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QString \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QDateTime \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/qdatetime.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QVariant \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlRecord \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqlrecord.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QTextCodec \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/qtextcodec.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlDriver \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqldriver.h \
+		../FINALEXAMDESIGHN/mainwindow.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QTimer \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/qtimer.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/qbasictimer.h \
+		D:/QT/5.14.2/mingw73_32/include/QtGui/QFont \
+		../FINALEXAMDESIGHN/schedule.h \
+		../FINALEXAMDESIGHN/homework.h \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QMenuBar \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qmenubar.h \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qmenu.h \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qaction.h \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qactiongroup.h \
 		debug/moc_predefs.h \
 		D:/QT/5.14.2/mingw73_32/bin/moc.exe
 	D:\QT\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include E:/hahahahaha/Class-Managing-System-master/build-FINALEXAMDESIGHN-Desktop_Qt_5_14_2_MinGW_32_bit-Debug/debug/moc_predefs.h -ID:/QT/5.14.2/mingw73_32/mkspecs/win32-g++ -IE:/hahahahaha/Class-Managing-System-master/FINALEXAMDESIGHN -ID:/QT/5.14.2/mingw73_32/include -ID:/QT/5.14.2/mingw73_32/include/QtWidgets -ID:/QT/5.14.2/mingw73_32/include/QtGui -ID:/QT/5.14.2/mingw73_32/include/QtANGLE -ID:/QT/5.14.2/mingw73_32/include/QtSql -ID:/QT/5.14.2/mingw73_32/include/QtCore -I. -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -ID:/QT/Tools/mingw730_32/i686-w64-mingw32/include ..\FINALEXAMDESIGHN\homework.h -o debug\moc_homework.cpp
@@ -348,6 +385,24 @@ debug/moc_insert.cpp: ../FINALEXAMDESIGHN/insert.h \
 		D:/QT/5.14.2/mingw73_32/include/QtCore/qfiledevice.h \
 		D:/QT/5.14.2/mingw73_32/include/QtGui/qvector2d.h \
 		D:/QT/5.14.2/mingw73_32/include/QtGui/qtouchdevice.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QtDebug \
+		../FINALEXAMDESIGHN/dbconnect.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlDatabase \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqldatabase.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qtsqlglobal.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qtsql-config.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlQuery \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqlquery.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QString \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QDateTime \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/qdatetime.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QVariant \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlRecord \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqlrecord.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QTextCodec \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/qtextcodec.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlDriver \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqldriver.h \
 		debug/moc_predefs.h \
 		D:/QT/5.14.2/mingw73_32/bin/moc.exe
 	D:\QT\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include E:/hahahahaha/Class-Managing-System-master/build-FINALEXAMDESIGHN-Desktop_Qt_5_14_2_MinGW_32_bit-Debug/debug/moc_predefs.h -ID:/QT/5.14.2/mingw73_32/mkspecs/win32-g++ -IE:/hahahahaha/Class-Managing-System-master/FINALEXAMDESIGHN -ID:/QT/5.14.2/mingw73_32/include -ID:/QT/5.14.2/mingw73_32/include/QtWidgets -ID:/QT/5.14.2/mingw73_32/include/QtGui -ID:/QT/5.14.2/mingw73_32/include/QtANGLE -ID:/QT/5.14.2/mingw73_32/include/QtSql -ID:/QT/5.14.2/mingw73_32/include/QtCore -I. -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -ID:/QT/Tools/mingw730_32/i686-w64-mingw32/include ..\FINALEXAMDESIGHN\insert.h -o debug\moc_insert.cpp
@@ -469,7 +524,30 @@ debug/moc_mainwindow.cpp: ../FINALEXAMDESIGHN/mainwindow.h \
 		../FINALEXAMDESIGHN/insert.h \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QDialog \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qdialog.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QtDebug \
+		../FINALEXAMDESIGHN/dbconnect.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlDatabase \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqldatabase.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qtsqlglobal.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qtsql-config.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlQuery \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqlquery.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QString \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QVariant \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlRecord \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqlrecord.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QTextCodec \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/qtextcodec.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlDriver \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqldriver.h \
 		../FINALEXAMDESIGHN/schedule.h \
+		../FINALEXAMDESIGHN/homework.h \
+		../FINALEXAMDESIGHN/mainwindow.h \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QMenuBar \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qmenubar.h \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qmenu.h \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qaction.h \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qactiongroup.h \
 		debug/moc_predefs.h \
 		D:/QT/5.14.2/mingw73_32/bin/moc.exe
 	D:\QT\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include E:/hahahahaha/Class-Managing-System-master/build-FINALEXAMDESIGHN-Desktop_Qt_5_14_2_MinGW_32_bit-Debug/debug/moc_predefs.h -ID:/QT/5.14.2/mingw73_32/mkspecs/win32-g++ -IE:/hahahahaha/Class-Managing-System-master/FINALEXAMDESIGHN -ID:/QT/5.14.2/mingw73_32/include -ID:/QT/5.14.2/mingw73_32/include/QtWidgets -ID:/QT/5.14.2/mingw73_32/include/QtGui -ID:/QT/5.14.2/mingw73_32/include/QtANGLE -ID:/QT/5.14.2/mingw73_32/include/QtSql -ID:/QT/5.14.2/mingw73_32/include/QtCore -I. -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -ID:/QT/Tools/mingw730_32/i686-w64-mingw32/include ..\FINALEXAMDESIGHN\mainwindow.h -o debug\moc_mainwindow.cpp
@@ -580,6 +658,24 @@ debug/moc_schedule.cpp: ../FINALEXAMDESIGHN/schedule.h \
 		D:/QT/5.14.2/mingw73_32/include/QtCore/qfiledevice.h \
 		D:/QT/5.14.2/mingw73_32/include/QtGui/qvector2d.h \
 		D:/QT/5.14.2/mingw73_32/include/QtGui/qtouchdevice.h \
+		../FINALEXAMDESIGHN/dbconnect.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlDatabase \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqldatabase.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qtsqlglobal.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qtsql-config.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlQuery \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqlquery.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QString \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QDateTime \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/qdatetime.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QVariant \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlRecord \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqlrecord.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QTextCodec \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/qtextcodec.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlDriver \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqldriver.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QtDebug \
 		debug/moc_predefs.h \
 		D:/QT/5.14.2/mingw73_32/bin/moc.exe
 	D:\QT\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include E:/hahahahaha/Class-Managing-System-master/build-FINALEXAMDESIGHN-Desktop_Qt_5_14_2_MinGW_32_bit-Debug/debug/moc_predefs.h -ID:/QT/5.14.2/mingw73_32/mkspecs/win32-g++ -IE:/hahahahaha/Class-Managing-System-master/FINALEXAMDESIGHN -ID:/QT/5.14.2/mingw73_32/include -ID:/QT/5.14.2/mingw73_32/include/QtWidgets -ID:/QT/5.14.2/mingw73_32/include/QtGui -ID:/QT/5.14.2/mingw73_32/include/QtANGLE -ID:/QT/5.14.2/mingw73_32/include/QtSql -ID:/QT/5.14.2/mingw73_32/include/QtCore -I. -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -ID:/QT/Tools/mingw730_32/i686-w64-mingw32/include ..\FINALEXAMDESIGHN\schedule.h -o debug\moc_schedule.cpp
@@ -811,11 +907,41 @@ debug/homework.o: ../FINALEXAMDESIGHN/homework.cpp ../FINALEXAMDESIGHN/homework.
 		D:/QT/5.14.2/mingw73_32/include/QtGui/qtouchdevice.h \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qtabwidget.h \
 		D:/QT/5.14.2/mingw73_32/include/QtGui/qicon.h \
-		ui_homework.h \
+		../FINALEXAMDESIGHN/insert.h \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QDialog \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qdialog.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QtDebug \
+		../FINALEXAMDESIGHN/dbconnect.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlDatabase \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqldatabase.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qtsqlglobal.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qtsql-config.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlQuery \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqlquery.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QString \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QDateTime \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/qdatetime.h \
 		D:/QT/5.14.2/mingw73_32/include/QtCore/QVariant \
-		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QAction \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlRecord \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqlrecord.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QTextCodec \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/qtextcodec.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlDriver \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqldriver.h \
+		../FINALEXAMDESIGHN/mainwindow.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QTimer \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/qtimer.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/qbasictimer.h \
+		D:/QT/5.14.2/mingw73_32/include/QtGui/QFont \
+		../FINALEXAMDESIGHN/schedule.h \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QMenuBar \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qmenubar.h \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qmenu.h \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qaction.h \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qactiongroup.h \
+		ui_homework.h \
+		D:/QT/5.14.2/mingw73_32/include/QtGui/QIcon \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QAction \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QApplication \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qapplication.h \
 		D:/QT/5.14.2/mingw73_32/include/QtCore/qcoreapplication.h \
@@ -836,9 +962,6 @@ debug/homework.o: ../FINALEXAMDESIGHN/homework.cpp ../FINALEXAMDESIGHN/homework.
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QLabel \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qlabel.h \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QMenu \
-		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qmenu.h \
-		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QMenuBar \
-		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qmenubar.h \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QPushButton \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qpushbutton.h \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qabstractbutton.h \
@@ -954,8 +1077,25 @@ debug/insert.o: ../FINALEXAMDESIGHN/insert.cpp ../FINALEXAMDESIGHN/insert.h \
 		D:/QT/5.14.2/mingw73_32/include/QtCore/qfiledevice.h \
 		D:/QT/5.14.2/mingw73_32/include/QtGui/qvector2d.h \
 		D:/QT/5.14.2/mingw73_32/include/QtGui/qtouchdevice.h \
-		ui_insert.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QtDebug \
+		../FINALEXAMDESIGHN/dbconnect.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlDatabase \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqldatabase.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qtsqlglobal.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qtsql-config.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlQuery \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqlquery.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QString \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QDateTime \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/qdatetime.h \
 		D:/QT/5.14.2/mingw73_32/include/QtCore/QVariant \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlRecord \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqlrecord.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QTextCodec \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/qtextcodec.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlDriver \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqldriver.h \
+		ui_insert.h \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QApplication \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qapplication.h \
 		D:/QT/5.14.2/mingw73_32/include/QtCore/qcoreapplication.h \
@@ -979,10 +1119,11 @@ debug/insert.o: ../FINALEXAMDESIGHN/insert.cpp ../FINALEXAMDESIGHN/insert.h \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qrubberband.h \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qframe.h \
 		D:/QT/5.14.2/mingw73_32/include/QtCore/qabstractitemmodel.h \
-		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QDialogButtonBox \
-		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qdialogbuttonbox.h \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QLabel \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qlabel.h \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QPushButton \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qpushbutton.h \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qabstractbutton.h \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QTextEdit \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qtextedit.h \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qabstractscrollarea.h \
@@ -1110,7 +1251,29 @@ debug/main.o: ../FINALEXAMDESIGHN/main.cpp ../FINALEXAMDESIGHN/mainwindow.h \
 		../FINALEXAMDESIGHN/insert.h \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QDialog \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qdialog.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QtDebug \
+		../FINALEXAMDESIGHN/dbconnect.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlDatabase \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqldatabase.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qtsqlglobal.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qtsql-config.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlQuery \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqlquery.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QString \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QVariant \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlRecord \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqlrecord.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QTextCodec \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/qtextcodec.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlDriver \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqldriver.h \
 		../FINALEXAMDESIGHN/schedule.h \
+		../FINALEXAMDESIGHN/homework.h \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QMenuBar \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qmenubar.h \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qmenu.h \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qaction.h \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qactiongroup.h \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QApplication \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qapplication.h \
 		D:/QT/5.14.2/mingw73_32/include/QtCore/qcoreapplication.h \
@@ -1237,12 +1400,32 @@ debug/mainwindow.o: ../FINALEXAMDESIGHN/mainwindow.cpp ../FINALEXAMDESIGHN/mainw
 		../FINALEXAMDESIGHN/insert.h \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QDialog \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qdialog.h \
-		../FINALEXAMDESIGHN/schedule.h \
-		ui_mainwindow.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QtDebug \
+		../FINALEXAMDESIGHN/dbconnect.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlDatabase \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqldatabase.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qtsqlglobal.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qtsql-config.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlQuery \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqlquery.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QString \
 		D:/QT/5.14.2/mingw73_32/include/QtCore/QVariant \
-		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QAction \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlRecord \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqlrecord.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QTextCodec \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/qtextcodec.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlDriver \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqldriver.h \
+		../FINALEXAMDESIGHN/schedule.h \
+		../FINALEXAMDESIGHN/homework.h \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QMenuBar \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qmenubar.h \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qmenu.h \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qaction.h \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qactiongroup.h \
+		ui_mainwindow.h \
+		D:/QT/5.14.2/mingw73_32/include/QtGui/QIcon \
+		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QAction \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QApplication \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qapplication.h \
 		D:/QT/5.14.2/mingw73_32/include/QtCore/qcoreapplication.h \
@@ -1264,31 +1447,13 @@ debug/mainwindow.o: ../FINALEXAMDESIGHN/mainwindow.cpp ../FINALEXAMDESIGHN/mainw
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QLabel \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qlabel.h \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QMenu \
-		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qmenu.h \
-		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QMenuBar \
-		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qmenubar.h \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QPushButton \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qpushbutton.h \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qabstractbutton.h \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QStatusBar \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qstatusbar.h \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QWidget \
-		D:/QT/5.14.2/mingw73_32/include/QtCore/QTime \
-		../FINALEXAMDESIGHN/dbconnect.h \
-		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlDatabase \
-		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqldatabase.h \
-		D:/QT/5.14.2/mingw73_32/include/QtSql/qtsqlglobal.h \
-		D:/QT/5.14.2/mingw73_32/include/QtSql/qtsql-config.h \
-		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlQuery \
-		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqlquery.h \
-		D:/QT/5.14.2/mingw73_32/include/QtCore/QString \
-		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlRecord \
-		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqlrecord.h \
-		D:/QT/5.14.2/mingw73_32/include/QtCore/QTextCodec \
-		D:/QT/5.14.2/mingw73_32/include/QtCore/qtextcodec.h \
-		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlDriver \
-		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqldriver.h \
-		D:/QT/5.14.2/mingw73_32/include/QtCore/QtDebug
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QTime
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o ..\FINALEXAMDESIGHN\mainwindow.cpp
 
 debug/schedule.o: ../FINALEXAMDESIGHN/schedule.cpp ../FINALEXAMDESIGHN/schedule.h \
@@ -1397,8 +1562,25 @@ debug/schedule.o: ../FINALEXAMDESIGHN/schedule.cpp ../FINALEXAMDESIGHN/schedule.
 		D:/QT/5.14.2/mingw73_32/include/QtCore/qfiledevice.h \
 		D:/QT/5.14.2/mingw73_32/include/QtGui/qvector2d.h \
 		D:/QT/5.14.2/mingw73_32/include/QtGui/qtouchdevice.h \
-		ui_schedule.h \
+		../FINALEXAMDESIGHN/dbconnect.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlDatabase \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqldatabase.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qtsqlglobal.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qtsql-config.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlQuery \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqlquery.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QString \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QDateTime \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/qdatetime.h \
 		D:/QT/5.14.2/mingw73_32/include/QtCore/QVariant \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlRecord \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqlrecord.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QTextCodec \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/qtextcodec.h \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/QSqlDriver \
+		D:/QT/5.14.2/mingw73_32/include/QtSql/qsqldriver.h \
+		D:/QT/5.14.2/mingw73_32/include/QtCore/QtDebug \
+		ui_schedule.h \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/QApplication \
 		D:/QT/5.14.2/mingw73_32/include/QtWidgets/qapplication.h \
 		D:/QT/5.14.2/mingw73_32/include/QtCore/qcoreapplication.h \
