@@ -1,4 +1,5 @@
 QT       += core gui sql
+RC_ICONS = ICON.ico
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
