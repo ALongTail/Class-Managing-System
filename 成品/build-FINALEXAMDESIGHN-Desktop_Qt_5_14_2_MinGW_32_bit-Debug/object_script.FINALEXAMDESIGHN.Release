@@ -1,0 +1,10 @@
+release/dbconnect.o
+release/homework.o
+release/insert.o
+release/main.o
+release/mainwindow.o
+release/schedule.o
+release/moc_homework.o
+release/moc_insert.o
+release/moc_mainwindow.o
+release/moc_schedule.o
