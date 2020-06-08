@@ -247,6 +247,7 @@ Makefile: ../Class-Managing-System/Class-Managing-System.pro D:/Qt/5.14.2/mingw7
 		D:/Qt/5.14.2/mingw73_32/mkspecs/features/qt_config.prf \
 		D:/Qt/5.14.2/mingw73_32/mkspecs/win32-g++/qmake.conf \
 		D:/Qt/5.14.2/mingw73_32/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		D:/Qt/5.14.2/mingw73_32/mkspecs/features/exclusive_builds.prf \
 		D:/Qt/5.14.2/mingw73_32/mkspecs/features/toolchain.prf \
 		D:/Qt/5.14.2/mingw73_32/mkspecs/features/default_pre.prf \
@@ -276,7 +277,6 @@ Makefile: ../Class-Managing-System/Class-Managing-System.pro D:/Qt/5.14.2/mingw7
 		D:/Qt/5.14.2/mingw73_32/lib/Qt5Sql.prl \
 		D:/Qt/5.14.2/mingw73_32/lib/Qt5Core.prl \
 		D:/Qt/5.14.2/mingw73_32/lib/qtmain.prl \
-		.qmake.stash \
 		D:/Qt/5.14.2/mingw73_32/mkspecs/features/build_pass.prf
 	$(QMAKE) -o Makefile ..\Class-Managing-System\Class-Managing-System.pro -spec win32-g++ "CONFIG+=qtquickcompiler"
 D:/Qt/5.14.2/mingw73_32/mkspecs/features/spec_pre.prf:
@@ -456,6 +456,7 @@ D:/Qt/5.14.2/mingw73_32/mkspecs/features/qt_functions.prf:
 D:/Qt/5.14.2/mingw73_32/mkspecs/features/qt_config.prf:
 D:/Qt/5.14.2/mingw73_32/mkspecs/win32-g++/qmake.conf:
 D:/Qt/5.14.2/mingw73_32/mkspecs/features/spec_post.prf:
+.qmake.stash:
 D:/Qt/5.14.2/mingw73_32/mkspecs/features/exclusive_builds.prf:
 D:/Qt/5.14.2/mingw73_32/mkspecs/features/toolchain.prf:
 D:/Qt/5.14.2/mingw73_32/mkspecs/features/default_pre.prf:
@@ -485,7 +486,6 @@ D:/Qt/5.14.2/mingw73_32/lib/Qt5Gui.prl:
 D:/Qt/5.14.2/mingw73_32/lib/Qt5Sql.prl:
 D:/Qt/5.14.2/mingw73_32/lib/Qt5Core.prl:
 D:/Qt/5.14.2/mingw73_32/lib/qtmain.prl:
-.qmake.stash:
 D:/Qt/5.14.2/mingw73_32/mkspecs/features/build_pass.prf:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\Class-Managing-System\Class-Managing-System.pro -spec win32-g++ "CONFIG+=qtquickcompiler"

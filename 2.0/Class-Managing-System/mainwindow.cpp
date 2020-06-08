@@ -18,6 +18,11 @@ MainWindow::MainWindow(QWidget *parent)
     QPalette palette(this->palette());
     palette.setBrush(QPalette::Background, QBrush(pixmap));
     this->setPalette(palette);
+    /*--------------database--------------*/
+    dbconnect con;
+    QString Stu=con.clean_search();
+    ui->clean->setText(Stu);//student on duty
+    showClasses();//classes
 }
 
 void MainWindow::timerUpdate(){
@@ -44,11 +49,9 @@ void MainWindow::IsChange(){
     int hour = current_time.hour();
     int minute = current_time.minute();
     int second = current_time.second();
-    /*---------------todo: set time---------------*/
-    if( hour == 7 && minute == 00 && second == 00 )
-        /*----------------todo: ShowSchedule---------------*/
-    if( hour == 17 && minute == 00 && second == 00 )
-        /*----------------todo: ShowHomework---------------*/
+    /*---------------auto switch---------------*/
+    if((hour == clover[0] && minute == clover[1]+10 && second == 00) || (hour==clover[0]+1 && minute == clover[1]-50 && second == 00))//10min after class, switch
+        showHWork();
     if( hour == 21 && minute == 30 && second == 00 )
         this->close();
 }//switch on time
@@ -71,8 +74,41 @@ void MainWindow::on_BtnInfo_clicked()
 
 void MainWindow::on_BtnSwitch_clicked()
 {
-    if(ui->BtnSwitch->text()=="自习")
+    if(ui->BtnSwitch->text()=="自习"){
         ui->BtnSwitch->setText("上课");
-    else
+        showHWork();
+    }
+    else{
         ui->BtnSwitch->setText("自习");
-}//switch between classes and homework
+        showClasses();
+    }
+}
+
+/*-------switch between classes and homework--------*/
+void MainWindow::showClasses(){
+    QFont font("Bahnschrift Light",24,50);
+    ui->lbleft->setFont(font);
+    ui->lbright->setFont(font);
+    ui->lbleft->setAlignment(Qt::AlignCenter);
+    ui->lbright->setAlignment(Qt::AlignCenter);//set font
+    dbconnect con;
+    QString time,classes,over;
+    con.class_display(time,classes,over);
+    ui->lbleft->setText(time);
+    ui->lbright->setText(classes);
+    clover[0]=over.mid(0,2).toInt();
+    clover[1]=over.mid(3,2).toInt();
+}
+
+void MainWindow::showHWork(){
+    QFont font("Bahnschrift Light",18,50);
+    ui->lbleft->setFont(font);
+    ui->lbright->setFont(font);
+    ui->lbleft->setAlignment(Qt::AlignLeft);ui->lbleft->setAlignment(Qt::AlignVCenter);
+    ui->lbright->setAlignment(Qt::AlignLeft);ui->lbright->setAlignment(Qt::AlignVCenter);//set font
+    dbconnect con;
+    QString mainclasses,mixedclasses;
+    con.homework_display(mainclasses,mixedclasses);
+    ui->lbleft->setText(mainclasses);
+    ui->lbright->setText(mixedclasses);
+}

@@ -6,9 +6,11 @@
 #include <QDateTime>
 #include <QFont>
 #include <QMenuBar>
+#include <QCharRef>
 
 #include "homework.h"
 #include "information.h"
+#include "dbconnect.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,16 +23,18 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void showClasses();
+    void showHWork();
+    int clover[2];
+
 public slots:
     void timerUpdate();
     void IsChange();
+
 private slots:
     void on_BtnExit_clicked();
-
     void on_BtnHWork_clicked();
-
     void on_BtnInfo_clicked();
-
     void on_BtnSwitch_clicked();
 
 private:

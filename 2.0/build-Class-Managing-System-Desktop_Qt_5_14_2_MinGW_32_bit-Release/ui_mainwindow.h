@@ -56,6 +56,7 @@ public:
     QLabel *lbright;
     QMenuBar *menubar;
     QMenu *menu;
+    QMenu *menu_2;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -129,6 +130,7 @@ public:
 
         widget_5 = new QWidget(widget_4);
         widget_5->setObjectName(QString::fromUtf8("widget_5"));
+        widget_5->setMinimumSize(QSize(0, 200));
         gridLayout_5 = new QGridLayout(widget_5);
         gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
         TimeClock_Hour = new QLCDNumber(widget_5);
@@ -180,8 +182,9 @@ public:
         lbleft->setObjectName(QString::fromUtf8("lbleft"));
         QFont font2;
         font2.setFamily(QString::fromUtf8("Bahnschrift Light"));
-        font2.setPointSize(16);
+        font2.setPointSize(24);
         lbleft->setFont(font2);
+        lbleft->setAlignment(Qt::AlignCenter);
         lbleft->setWordWrap(true);
 
         gridLayout_2->addWidget(lbleft, 0, 0, 1, 1);
@@ -189,6 +192,7 @@ public:
         lbright = new QLabel(widget_3);
         lbright->setObjectName(QString::fromUtf8("lbright"));
         lbright->setFont(font2);
+        lbright->setAlignment(Qt::AlignCenter);
         lbright->setWordWrap(true);
 
         gridLayout_2->addWidget(lbright, 0, 1, 1, 1);
@@ -202,11 +206,14 @@ public:
         menubar->setGeometry(QRect(0, 0, 908, 26));
         menu = new QMenu(menubar);
         menu->setObjectName(QString::fromUtf8("menu"));
+        menu_2 = new QMenu(menubar);
+        menu_2->setObjectName(QString::fromUtf8("menu_2"));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         MainWindow->setStatusBar(statusbar);
 
+        menubar->addAction(menu_2->menuAction());
         menubar->addAction(menu->menuAction());
         menu->addAction(action);
         menu->addAction(action_2);
@@ -233,6 +240,7 @@ public:
         lbleft->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         lbright->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         menu->setTitle(QCoreApplication::translate("MainWindow", "\345\270\256\345\212\251", nullptr));
+        menu_2->setTitle(QCoreApplication::translate("MainWindow", "\345\210\207\346\215\242", nullptr));
     } // retranslateUi
 
 };
