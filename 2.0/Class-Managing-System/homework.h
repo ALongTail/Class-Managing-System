@@ -15,6 +15,11 @@ public:
     explicit homework(QWidget *parent = nullptr);
     ~homework();
 
+private slots:
+    void on_BtnNext_clicked();
+
+    void on_BtnInsert_clicked();
+
 private:
     Ui::homework *ui;
 };

@@ -114,7 +114,7 @@
      </widget>
     </item>
     <item row="0" column="3">
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="BtnSearch">
       <property name="text">
        <string>GO</string>
       </property>
@@ -124,7 +124,7 @@
      <widget class="QTextEdit" name="textEdit"/>
     </item>
     <item row="0" column="7">
-     <widget class="QPushButton" name="pushButton_5">
+     <widget class="QPushButton" name="BtnAdd">
       <property name="text">
        <string>GO</string>
       </property>

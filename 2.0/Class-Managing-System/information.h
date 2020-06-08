@@ -24,6 +24,10 @@ private slots:
 
     void on_homework_clicked();
 
+    void on_BtnSearch_clicked();
+
+    void on_BtnAdd_clicked();
+
 private:
     Ui::information *ui;
 };
