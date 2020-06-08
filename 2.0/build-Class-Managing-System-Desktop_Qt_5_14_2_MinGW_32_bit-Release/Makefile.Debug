@@ -367,6 +367,24 @@ debug/moc_information.cpp: ../Class-Managing-System/information.h \
 		D:/Qt/5.14.2/mingw73_32/include/QtCore/qfiledevice.h \
 		D:/Qt/5.14.2/mingw73_32/include/QtGui/qvector2d.h \
 		D:/Qt/5.14.2/mingw73_32/include/QtGui/qtouchdevice.h \
+		../Class-Managing-System/dbconnect.h \
+		D:/Qt/5.14.2/mingw73_32/include/QtSql/QSqlDatabase \
+		D:/Qt/5.14.2/mingw73_32/include/QtSql/qsqldatabase.h \
+		D:/Qt/5.14.2/mingw73_32/include/QtSql/qtsqlglobal.h \
+		D:/Qt/5.14.2/mingw73_32/include/QtSql/qtsql-config.h \
+		D:/Qt/5.14.2/mingw73_32/include/QtSql/QSqlQuery \
+		D:/Qt/5.14.2/mingw73_32/include/QtSql/qsqlquery.h \
+		D:/Qt/5.14.2/mingw73_32/include/QtCore/QString \
+		D:/Qt/5.14.2/mingw73_32/include/QtCore/QDateTime \
+		D:/Qt/5.14.2/mingw73_32/include/QtCore/qdatetime.h \
+		D:/Qt/5.14.2/mingw73_32/include/QtCore/QVariant \
+		D:/Qt/5.14.2/mingw73_32/include/QtSql/QSqlRecord \
+		D:/Qt/5.14.2/mingw73_32/include/QtSql/qsqlrecord.h \
+		D:/Qt/5.14.2/mingw73_32/include/QtCore/QTextCodec \
+		D:/Qt/5.14.2/mingw73_32/include/QtCore/qtextcodec.h \
+		D:/Qt/5.14.2/mingw73_32/include/QtSql/QSqlDriver \
+		D:/Qt/5.14.2/mingw73_32/include/QtSql/qsqldriver.h \
+		D:/Qt/5.14.2/mingw73_32/include/QtCore/QtDebug \
 		debug/moc_predefs.h \
 		D:/Qt/5.14.2/mingw73_32/bin/moc.exe
 	D:\Qt\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include E:/hahahahaha/FINAL/-----------/2.0/build-Class-Managing-System-Desktop_Qt_5_14_2_MinGW_32_bit-Release/debug/moc_predefs.h -ID:/Qt/5.14.2/mingw73_32/mkspecs/win32-g++ -IE:/hahahahaha/FINAL/-----------/2.0/Class-Managing-System -ID:/Qt/5.14.2/mingw73_32/include -ID:/Qt/5.14.2/mingw73_32/include/QtWidgets -ID:/Qt/5.14.2/mingw73_32/include/QtGui -ID:/Qt/5.14.2/mingw73_32/include/QtANGLE -ID:/Qt/5.14.2/mingw73_32/include/QtSql -ID:/Qt/5.14.2/mingw73_32/include/QtCore -I. -ID:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -ID:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -ID:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -ID:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -ID:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -ID:/Qt/Tools/mingw730_32/i686-w64-mingw32/include ..\Class-Managing-System\information.h -o debug\moc_information.cpp
@@ -490,6 +508,7 @@ debug/moc_mainwindow.cpp: ../Class-Managing-System/mainwindow.h \
 		D:/Qt/5.14.2/mingw73_32/include/QtWidgets/qmenu.h \
 		D:/Qt/5.14.2/mingw73_32/include/QtWidgets/qaction.h \
 		D:/Qt/5.14.2/mingw73_32/include/QtWidgets/qactiongroup.h \
+		D:/Qt/5.14.2/mingw73_32/include/QtCore/QCharRef \
 		../Class-Managing-System/homework.h \
 		D:/Qt/5.14.2/mingw73_32/include/QtWidgets/QDialog \
 		D:/Qt/5.14.2/mingw73_32/include/QtWidgets/qdialog.h \
@@ -898,8 +917,25 @@ debug/information.o: ../Class-Managing-System/information.cpp ../Class-Managing-
 		D:/Qt/5.14.2/mingw73_32/include/QtCore/qfiledevice.h \
 		D:/Qt/5.14.2/mingw73_32/include/QtGui/qvector2d.h \
 		D:/Qt/5.14.2/mingw73_32/include/QtGui/qtouchdevice.h \
-		ui_information.h \
+		../Class-Managing-System/dbconnect.h \
+		D:/Qt/5.14.2/mingw73_32/include/QtSql/QSqlDatabase \
+		D:/Qt/5.14.2/mingw73_32/include/QtSql/qsqldatabase.h \
+		D:/Qt/5.14.2/mingw73_32/include/QtSql/qtsqlglobal.h \
+		D:/Qt/5.14.2/mingw73_32/include/QtSql/qtsql-config.h \
+		D:/Qt/5.14.2/mingw73_32/include/QtSql/QSqlQuery \
+		D:/Qt/5.14.2/mingw73_32/include/QtSql/qsqlquery.h \
+		D:/Qt/5.14.2/mingw73_32/include/QtCore/QString \
+		D:/Qt/5.14.2/mingw73_32/include/QtCore/QDateTime \
+		D:/Qt/5.14.2/mingw73_32/include/QtCore/qdatetime.h \
 		D:/Qt/5.14.2/mingw73_32/include/QtCore/QVariant \
+		D:/Qt/5.14.2/mingw73_32/include/QtSql/QSqlRecord \
+		D:/Qt/5.14.2/mingw73_32/include/QtSql/qsqlrecord.h \
+		D:/Qt/5.14.2/mingw73_32/include/QtCore/QTextCodec \
+		D:/Qt/5.14.2/mingw73_32/include/QtCore/qtextcodec.h \
+		D:/Qt/5.14.2/mingw73_32/include/QtSql/QSqlDriver \
+		D:/Qt/5.14.2/mingw73_32/include/QtSql/qsqldriver.h \
+		D:/Qt/5.14.2/mingw73_32/include/QtCore/QtDebug \
+		ui_information.h \
 		D:/Qt/5.14.2/mingw73_32/include/QtWidgets/QApplication \
 		D:/Qt/5.14.2/mingw73_32/include/QtWidgets/qapplication.h \
 		D:/Qt/5.14.2/mingw73_32/include/QtCore/qcoreapplication.h \
@@ -1068,6 +1104,7 @@ debug/main.o: ../Class-Managing-System/main.cpp ../Class-Managing-System/mainwin
 		D:/Qt/5.14.2/mingw73_32/include/QtWidgets/qmenu.h \
 		D:/Qt/5.14.2/mingw73_32/include/QtWidgets/qaction.h \
 		D:/Qt/5.14.2/mingw73_32/include/QtWidgets/qactiongroup.h \
+		D:/Qt/5.14.2/mingw73_32/include/QtCore/QCharRef \
 		../Class-Managing-System/homework.h \
 		D:/Qt/5.14.2/mingw73_32/include/QtWidgets/QDialog \
 		D:/Qt/5.14.2/mingw73_32/include/QtWidgets/qdialog.h \
@@ -1216,6 +1253,7 @@ debug/mainwindow.o: ../Class-Managing-System/mainwindow.cpp ../Class-Managing-Sy
 		D:/Qt/5.14.2/mingw73_32/include/QtWidgets/qmenu.h \
 		D:/Qt/5.14.2/mingw73_32/include/QtWidgets/qaction.h \
 		D:/Qt/5.14.2/mingw73_32/include/QtWidgets/qactiongroup.h \
+		D:/Qt/5.14.2/mingw73_32/include/QtCore/QCharRef \
 		../Class-Managing-System/homework.h \
 		D:/Qt/5.14.2/mingw73_32/include/QtWidgets/QDialog \
 		D:/Qt/5.14.2/mingw73_32/include/QtWidgets/qdialog.h \

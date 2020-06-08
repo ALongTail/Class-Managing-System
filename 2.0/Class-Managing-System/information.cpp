@@ -6,7 +6,7 @@ information::information(QWidget *parent) :
     ui(new Ui::information)
 {
     ui->setupUi(this);
-    /*--------------background------------*/
+    /*----------------background---------------*/
     setAutoFillBackground(true);
     QPixmap pixmap = QPixmap("E:/hahahahaha/FINAL/-----------/2.0/Class-Managing-System/background.jpg");
     QPalette palette(this->palette());
@@ -21,14 +21,14 @@ information::~information()
 
 void information::on_Btnexit_clicked()
 {
-    /*-----------save into database----------*/
+    /*-----------save into database------------*/
     this->close();
 }
 
 void information::on_schedule_clicked()
 {
     ui->lbTitle->setText("课 程 表");a=1;
-    /*-----------save into database----------*/
+    /*-----------save into database------------*/
 }
 
 void information::on_students_clicked()
@@ -55,5 +55,6 @@ void information::on_BtnAdd_clicked()
 
 void information::display(){
     dbconnect con;
-    /*------------display and save-------------*/
+    /*-----------------display-----------------*/
+    ui->tableView->addActions(
 }
