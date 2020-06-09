@@ -54,7 +54,7 @@ void MainWindow::IsChange(){
         showHWork();
     if( hour == 21 && minute == 30 && second == 00 )
         this->close();
-}//switch on time
+}
 
 /*-------------buttons---------------*/
 void MainWindow::on_BtnExit_clicked(){
@@ -76,11 +76,13 @@ void MainWindow::on_BtnSwitch_clicked()
 {
     if(ui->BtnSwitch->text()=="自习"){
         ui->BtnSwitch->setText("上课");
+        ui->BtnHWork->setEnabled(false);//自习就别加作业了
         showHWork();
     }
     else{
         ui->BtnSwitch->setText("自习");
         showClasses();
+        ui->BtnHWork->setEnabled(true);
     }
 }
 
@@ -97,15 +99,15 @@ void MainWindow::showClasses(){
     ui->lbleft->setText(time);
     ui->lbright->setText(classes);
     clover[0]=over.mid(0,2).toInt();
-    clover[1]=over.mid(3,2).toInt();
+    clover[1]=over.mid(3,2).toInt();qDebug()<<clover[0]<<" "<<clover[1];
 }
 
 void MainWindow::showHWork(){
     QFont font("Bahnschrift Light",18,50);
     ui->lbleft->setFont(font);
     ui->lbright->setFont(font);
-    ui->lbleft->setAlignment(Qt::AlignLeft);ui->lbleft->setAlignment(Qt::AlignVCenter);
-    ui->lbright->setAlignment(Qt::AlignLeft);ui->lbright->setAlignment(Qt::AlignVCenter);//set font
+    ui->lbleft->setAlignment(Qt::AlignLeft|Qt::AlignVCenter);
+    ui->lbright->setAlignment(Qt::AlignLeft|Qt::AlignVCenter);//set font
     dbconnect con;
     QString mainclasses,mixedclasses;
     con.homework_display(mainclasses,mixedclasses);

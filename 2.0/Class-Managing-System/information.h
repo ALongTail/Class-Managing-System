@@ -2,6 +2,9 @@
 #define INFORMATION_H
 
 #include <QDialog>
+#include <QList>
+#include <QStandardItem>
+#include <QStandardItemModel>
 #include "dbconnect.h"
 
 namespace Ui {
@@ -16,7 +19,6 @@ public:
     explicit information(QWidget *parent = nullptr);
     ~information();
     void display();
-    int a;//1 for classes, 2 for students, 3 for homework
 
 private slots:
     void on_Btnexit_clicked();
@@ -25,9 +27,11 @@ private slots:
     void on_homework_clicked();
     void on_BtnSearch_clicked();
     void on_BtnAdd_clicked();
+    void on_BtnEdit_clicked();
 
 private:
     Ui::information *ui;
+    int a=1;//1 for classes, 2 for students, 3 for homework
 };
 
 #endif // INFORMATION_H

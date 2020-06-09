@@ -11,10 +11,10 @@ dbconnect::dbconnect(){
     QSqlQuery query(db);
         bool table1=query.exec("create table if not exists students(id int primary key,name varchar,sex varchar,scores int,day varchar,duty varchar)");
         bool table2=query.exec("create table if not exists classes(id int primary key,timestart varchar,timeover varchar,"
-                                                "周一 varchar,周二 varchar,周三 varchar,周四 varchar,周五 varchar)");
+                                                "周一 varchar,周二 varchar,周三 varchar,周四 varchar,周五 varchar,周六 varchar,周日 varchar)");
         bool table3=query.exec("create table if not exists homework(Date varchar primary key,chinese varchar,math varchar,english varchar,"
                                                 "physics varchar,chemistry varchar,biology varchar,politics varchar,history varchar,"
-                                                "geology varchar)");
+                                                "geology varchar,elseall varchar)");
         if(table1&&table2&&table3)qDebug()<<"tables";
 }
 
@@ -28,8 +28,8 @@ dbconnect::~dbconnect(){
 void dbconnect::insert(){
     QSqlDatabase db=QSqlDatabase::database("sqlite");
     QSqlQuery query(db);
-        query.prepare(QString("REPLACE INTO homework VALUES(?,?,?,?,?,?,?,?,?,?)"));
-        for(int i=0;i<10;i++)
+        query.prepare(QString("REPLACE INTO homework VALUES(?,?,?,?,?,?,?,?,?,?,?)"));
+        for(int i=0;i<11;i++)
             query.bindValue(i,bond[i]);
         if(query.exec())qDebug()<<"yes";
 }
@@ -87,15 +87,24 @@ void dbconnect::homework_display(QString &mainclass,QString &mix){
     qDebug()<<mainclass<<mix;
 }
 
-QString dbconnect::readitem(int i,int j){
+QString dbconnect::readitem(int i,int j,QString s,bool &flag){
     QSqlDatabase db=QSqlDatabase::database("sqlite");
     QSqlQuery query(db);
     QString item;
     int count=0;
-    query.exec("select * from classes");
-    while(query.next()){
-        if(count==i)item=query.value(j+3).toString();
-        count++;
+    query.exec("select * from '"+s.trimmed()+"'");
+    if(i==-1){
+        query.last();
+        item=query.value(j).toString();
+        return item;
     }
-    return item;
+    else{
+        while(query.next()){
+            if(count==i){
+                item=query.value(j).toString();return item;
+            }
+            count++;
+        }
+        flag=false;
+    }
 }

@@ -168,6 +168,7 @@ public:
 
         BtnSwitch = new QPushButton(widget_4);
         BtnSwitch->setObjectName(QString::fromUtf8("BtnSwitch"));
+        BtnSwitch->setCursor(QCursor(Qt::PointingHandCursor));
 
         gridLayout->addWidget(BtnSwitch, 3, 0, 1, 1);
 

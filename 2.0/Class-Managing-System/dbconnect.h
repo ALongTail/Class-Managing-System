@@ -18,14 +18,13 @@ public:
     dbconnect();
     ~dbconnect();
 
-    bool write(const QString &Table,const QString &File);
     void insert();
     QString clean_search();
     void class_display(QString &time,QString &classes,QString &over);
     void homework_display(QString &mainclass,QString &mix);
-    QString readitem(int i,int j);
+    QString readitem(int i,int j,QString s,bool &flag);
 
-    QString bond[10];//bond the homework datas
+    QString bond[11];//bond the homework datas
 };
 
 #endif // DBCONNECT_H

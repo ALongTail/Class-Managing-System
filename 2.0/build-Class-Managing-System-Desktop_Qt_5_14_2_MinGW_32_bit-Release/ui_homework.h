@@ -64,9 +64,11 @@ public:
         BtnNext = new QPushButton(homework);
         BtnNext->setObjectName(QString::fromUtf8("BtnNext"));
         BtnNext->setGeometry(QRect(190, 560, 93, 28));
+        BtnNext->setCursor(QCursor(Qt::PointingHandCursor));
         BtnInsert = new QPushButton(homework);
         BtnInsert->setObjectName(QString::fromUtf8("BtnInsert"));
         BtnInsert->setGeometry(QRect(300, 560, 93, 28));
+        BtnInsert->setCursor(QCursor(Qt::PointingHandCursor));
 
         retranslateUi(homework);
 

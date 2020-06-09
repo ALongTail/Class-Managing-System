@@ -24,12 +24,12 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void showClasses();
-    void showHWork();
     int clover[2];
 
 public slots:
     void timerUpdate();
     void IsChange();
+    void showHWork();
 
 private slots:
     void on_BtnExit_clicked();

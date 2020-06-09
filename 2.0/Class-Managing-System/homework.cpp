@@ -14,7 +14,16 @@ homework::homework(QWidget *parent) :
     this->setPalette(palette);
     /*--------------insert initialize-------------*/
     QDate day;
-    bon[0]=day.currentDate().toString("yyyy-MM-dd");
+    dbconnect con;bool flag=true;
+    for(int i=0;i<10;i++)bon[i]=con.readitem(-1,i,"homework",flag);
+    QString date=day.currentDate().toString("yyyy-MM-dd");
+    if(bon[0]!=date){
+        bon[0]=date;
+        for(int i=1;i<10;i++)bon[i]="";
+    }
+    QString s=bon[1];
+    ui->textEdit->setText(s);
+    ui->BtnInsert->setEnabled(false);
 }
 
 homework::~homework()
@@ -26,8 +35,8 @@ void homework::on_BtnInsert_clicked()
 {
     /*---------insert and close---------*/
     QString work=ui->textEdit->toPlainText();
-    if(work!=""){
-        QString cl=ui->ClassSwitch->currentText();int cll=ui->ClassSwitch->currentIndex();
+    if(work!="" && work!="\n\n\n\n\n\n\n##########请在上方选择对应的科目##########"){
+        int cll=ui->ClassSwitch->currentIndex();
         bon[cll+1]=work;
     }
     dbconnect con;qDebug()<<bon[1];
@@ -38,9 +47,16 @@ void homework::on_BtnInsert_clicked()
 
 void homework::on_BtnNext_clicked()
 {
+    ui->BtnInsert->setEnabled(true);
     /*---------bond-----------*/
-    QString cl=ui->ClassSwitch->currentText();int cll=ui->ClassSwitch->currentIndex();
+    int cll=ui->ClassSwitch->currentIndex();
     QString work=ui->textEdit->toPlainText();
     bon[cll+1]=work;
-    ui->textEdit->clear();
+    ui->textEdit->setText("\n\n\n\n\n\n\n##########请在上方选择对应的科目##########");
+}
+
+void homework::on_ClassSwitch_currentIndexChanged(int index)
+{
+    QString s=bon[index+1];
+    ui->textEdit->setText(s);
 }

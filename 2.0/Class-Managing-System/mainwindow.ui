@@ -154,6 +154,9 @@
        </item>
        <item row="3" column="0">
         <widget class="QPushButton" name="BtnSwitch">
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
          <property name="text">
           <string>自习</string>
          </property>
