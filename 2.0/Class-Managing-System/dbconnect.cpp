@@ -12,7 +12,7 @@ dbconnect::dbconnect(){
         bool table1=query.exec("create table if not exists students(id int primary key,name varchar,sex varchar,scores int,day varchar,duty varchar)");
         bool table2=query.exec("create table if not exists classes(id int primary key,timestart varchar,timeover varchar,"
                                                 "周一 varchar,周二 varchar,周三 varchar,周四 varchar,周五 varchar,周六 varchar,周日 varchar)");
-        bool table3=query.exec("create table if not exists homework(Date varchar primary key,chinese varchar,math varchar,english varchar,"
+        bool table3=query.exec("create table if not exists homework(id varchar primary key,chinese varchar,math varchar,english varchar,"
                                                 "physics varchar,chemistry varchar,biology varchar,politics varchar,history varchar,"
                                                 "geology varchar,elseall varchar)");
         if(table1&&table2&&table3)qDebug()<<"tables";
@@ -92,7 +92,7 @@ QString dbconnect::readitem(int i,int j,QString s,bool &flag){
     QSqlQuery query(db);
     QString item;
     int count=0;
-    query.exec("select * from '"+s.trimmed()+"'");
+    query.exec("select * from '"+s.trimmed()+"' order by id");
     if(i==-1){
         query.last();
         item=query.value(j).toString();
@@ -107,4 +107,35 @@ QString dbconnect::readitem(int i,int j,QString s,bool &flag){
         }
         flag=false;
     }
+    return "";
 }
+
+void dbconnect::writeitem(QString Tab,QStringList s,int jmax){
+    QSqlDatabase db=QSqlDatabase::database("sqlite");
+    QSqlQuery query(db);
+    query.exec("select * from '"+Tab.trimmed()+"'");
+    QString b[jmax];
+    for(int j=0;j<jmax;j++)
+        b[j]=s[j];
+    if(Tab=="classes")
+        query.prepare(QString("REPLACE INTO classes VALUES(?,?,?,?,?,?,?,?,?,?)"));
+    if(Tab=="students")
+        query.prepare(QString("REPLACE INTO students VALUES(?,?,?,?,?,?)"));
+    if(Tab=="homework")
+        query.prepare(QString("REPLACE INTO homework VALUES(?,?,?,?,?,?,?,?,?,?,?)"));
+    for(int j=0;j<jmax;j++)
+        query.bindValue(j,b[j]);
+    if(query.exec())qDebug()<<"yes";
+}
+
+void dbconnect::add(QString Tab,QString s){
+    /*QSqlDatabase db=QSqlDatabase::database("sqlite");
+    QSqlQuery query(db);
+    if(Tab=="classes")
+        query.exec(QString("INSERT INTO classes VALUES('"+s.trimmed()+"',null,null,null,null,null,null,null,null,null)"));
+    if(Tab=="students")
+        query.exec(QString("INSERT INTO students VALUES('"+s.trimmed()+"',null,null,null,null,null)"));
+    if(Tab=="homework")
+        query.exec(QString("INSERT INTO homework VALUES('"+s.trimmed()+"',null,null,null,null,null,null,null,null,null,null)"));*/
+}
+

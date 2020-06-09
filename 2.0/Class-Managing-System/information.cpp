@@ -42,8 +42,6 @@ void information::on_homework_clicked(){
 
 void information::display(){
     dbconnect con;
-    QString Tab;
-    int jmax=0;
     QStringList str[3]={{"序号","开始","结束","周一","周二","周三","周四","周五","周六","周日"},\
                         {"学号","姓名","性别","德育分","值日日期","值日内容"},\
                         {"日期","语文","数学","英语","物理","化学","生物","政治","历史","地理","其他"}};
@@ -67,7 +65,9 @@ void information::display(){
             ui->tableWidget->setItem(i,j,new QTableWidgetItem(con.readitem(i,j,Tab,flag)));
         i++;
     }
-    ui->tableWidget->setRowCount(i-1);
+    imax=i-1;
+    ui->tableWidget->setRowCount(imax);
+
 }
 
 /*---------------handle----------------*/
@@ -87,9 +87,23 @@ void information::on_BtnAdd_clicked()
     QString s=ui->textEdit_2->toPlainText();
     ui->tableWidget->setItem(x,0,new QTableWidgetItem(s));
     ui->textEdit_2->clear();
+    dbconnect con;
+    //con.add(Tab,s);imax++;
 }
 
 void information::on_BtnEdit_clicked()
 {
+    /*-----------remind------------*/
+
     /*-----------save into database------------*/
+    dbconnect con;
+    QStringList str;
+    for(int i=0;i<imax;i++){
+        for(int j=0;j<jmax;j++){
+            str.append(ui->tableWidget->item(i,j)->text());
+        }
+        con.writeitem(Tab,str,jmax);
+        str.clear();
+    }
+
 }

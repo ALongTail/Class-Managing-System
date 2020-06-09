@@ -21,7 +21,6 @@ public:
 private slots:
     void on_BtnNext_clicked();
     void on_BtnInsert_clicked();
-
     void on_ClassSwitch_currentIndexChanged(int index);
 
 private:

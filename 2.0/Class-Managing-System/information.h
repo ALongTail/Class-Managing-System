@@ -19,6 +19,8 @@ public:
     explicit information(QWidget *parent = nullptr);
     ~information();
     void display();
+    QString Tab;
+    int imax=0,jmax=0;
 
 private slots:
     void on_Btnexit_clicked();
