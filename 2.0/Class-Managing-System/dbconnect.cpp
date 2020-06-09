@@ -136,6 +136,5 @@ void dbconnect::add(QString Tab,QString s){
     if(Tab=="students")
         query.exec(QString("INSERT INTO students VALUES('"+s.trimmed()+"',null,null,null,null,null)"));
     if(Tab=="homework")
-        query.exec(QString("INSERT INTO homework VALUES('"+s.trimmed()+"',null,null,null,null,null,null,null,null,null,null)"));*/
-}
-
+        query.exec(QString("INSERT INTO homework VALUES('"+s.trimmed()+"',null,null,null,null,null,null,null,null,null,null)"));
+*/}
