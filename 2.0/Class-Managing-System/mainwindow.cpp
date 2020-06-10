@@ -23,6 +23,8 @@ MainWindow::MainWindow(QWidget *parent)
     QString Stu=con.clean_search();
     ui->clean->setText(Stu);//student on duty
     showClasses();//classes
+    bool flag=true;
+    ui->remind->setText(con.readitem(-1,10,"homework",flag));//remind
 }
 
 void MainWindow::timerUpdate(){
@@ -113,4 +115,7 @@ void MainWindow::showHWork(){
     con.homework_display(mainclasses,mixedclasses);
     ui->lbleft->setText(mainclasses);
     ui->lbright->setText(mixedclasses);
+    bool flag=true;
+    ui->remind->setText(con.readitem(-1,10,"homework",flag));
 }
+

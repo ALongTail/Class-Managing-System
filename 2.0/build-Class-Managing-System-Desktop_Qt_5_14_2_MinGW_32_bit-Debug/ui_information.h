@@ -66,7 +66,7 @@ public:
         students->setCursor(QCursor(Qt::PointingHandCursor));
         Btnexit = new QPushButton(information);
         Btnexit->setObjectName(QString::fromUtf8("Btnexit"));
-        Btnexit->setGeometry(QRect(770, 630, 93, 28));
+        Btnexit->setGeometry(QRect(772, 630, 111, 28));
         Btnexit->setCursor(QCursor(Qt::PointingHandCursor));
         widget_2 = new QWidget(information);
         widget_2->setObjectName(QString::fromUtf8("widget_2"));
@@ -139,7 +139,7 @@ public:
         lbTitle->setText(QCoreApplication::translate("information", "\350\257\276 \347\250\213 \350\241\250", nullptr));
         schedule->setText(QCoreApplication::translate("information", "\350\257\276\347\250\213\350\241\250", nullptr));
         students->setText(QCoreApplication::translate("information", "\345\255\246\347\224\237", nullptr));
-        Btnexit->setText(QCoreApplication::translate("information", "\351\200\200\345\207\272", nullptr));
+        Btnexit->setText(QCoreApplication::translate("information", "\351\200\200\345\207\272(\344\270\215\344\277\235\345\255\230)", nullptr));
         label_3->setText(QCoreApplication::translate("information", "ADD\357\274\232", nullptr));
         BtnSearch->setText(QCoreApplication::translate("information", "GO", nullptr));
         BtnAdd->setText(QCoreApplication::translate("information", "GO", nullptr));

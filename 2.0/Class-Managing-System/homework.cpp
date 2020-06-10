@@ -15,11 +15,11 @@ homework::homework(QWidget *parent) :
     /*--------------insert initialize-------------*/
     QDate day;
     dbconnect con;bool flag=true;
-    for(int i=0;i<10;i++)bon[i]=con.readitem(-1,i,"homework",flag);
+    for(int i=0;i<11;i++)bon[i]=con.readitem(-1,i,"homework",flag);
     QString date=day.currentDate().toString("yyyy-MM-dd");
     if(bon[0]!=date){
         bon[0]=date;
-        for(int i=1;i<10;i++)bon[i]="";
+        for(int i=1;i<11;i++)bon[i]="";
     }
     QString s=bon[1];
     ui->textEdit->setText(s);
@@ -40,7 +40,7 @@ void homework::on_BtnInsert_clicked()
         bon[cll+1]=work;
     }
     dbconnect con;qDebug()<<bon[1];
-    for(int i=0;i<10;i++)con.bond[i]=bon[i];qDebug()<<con.bond[1];
+    for(int i=0;i<11;i++)con.bond[i]=bon[i];qDebug()<<con.bond[1];
     con.insert();
     this->close();
 }

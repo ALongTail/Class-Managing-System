@@ -94,7 +94,6 @@ void information::on_BtnAdd_clicked()
 void information::on_BtnEdit_clicked()
 {
     /*-----------remind------------*/
-
     /*-----------save into database------------*/
     dbconnect con;
     QStringList str;
