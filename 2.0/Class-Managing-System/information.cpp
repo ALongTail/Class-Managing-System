@@ -13,6 +13,9 @@ information::information(QWidget *parent) :
     palette.setBrush(QPalette::Background, QBrush(pixmap));
     this->setPalette(palette);
     display();
+    ui->BtnCancel->setEnabled(false);
+    ui->pushButton->setEnabled(false);
+    ui->BtnDrop->setEnabled(false);
 }
 
 information::~information()
@@ -92,6 +95,7 @@ void information::on_BtnSearch_clicked()
             imax--;
         }
     }
+    ui->BtnCancel->setEnabled(true);
 }
 
 void information::on_BtnAdd_clicked()
@@ -105,6 +109,7 @@ void information::on_BtnAdd_clicked()
     ui->textEdit_2->clear();
     imax++;
     CLICKED=false;
+    ui->pushButton->setEnabled(true);
 }
 
 void information::on_BtnEdit_clicked()
@@ -128,14 +133,27 @@ void information::on_pushButton_clicked()//取消添加
         ui->textEdit_2->clear();
     }
     CLICKED=true;
+    ui->pushButton->setEnabled(false);
 }
 
 void information::on_BtnCancel_clicked()
 {
     display();
+    ui->BtnCancel->setEnabled(false);
 }
 
 void information::on_BtnDrop_clicked()
 {
     /*------------------drop the highlighted----------------------*/
+    dbconnect con;
+    con.del(Tab,x);
+    imax--;
+    ui->tableWidget->removeRow(x);
+    ui->BtnDrop->setEnabled(false);
+}
+
+void information::on_tableWidget_cellClicked(int row, int column)
+{
+    ui->BtnDrop->setEnabled(true);
+    x=row;
 }

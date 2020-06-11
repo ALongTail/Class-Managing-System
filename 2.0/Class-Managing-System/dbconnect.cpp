@@ -144,3 +144,19 @@ QList<int> dbconnect::search(QString Tab,int jmax,QString s){
     }
     return li;
 }
+
+void dbconnect::del(QString Tab, int row){
+    QSqlDatabase db=QSqlDatabase::database("sqlite");
+    QSqlQuery query(db);
+    query.exec("select * from '"+Tab.trimmed()+"' order by id");
+    int count=0;
+    QString r;
+    while(query.next()){
+        if(count==row){
+            r=query.value(0).toString();
+            break;
+        }
+        count++;
+    }
+    query.exec("delete from '"+Tab.trimmed()+"' where id='"+r.trimmed()+"'");
+}

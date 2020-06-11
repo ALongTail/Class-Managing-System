@@ -67,7 +67,7 @@ public:
         students->setCursor(QCursor(Qt::PointingHandCursor));
         Btnexit = new QPushButton(information);
         Btnexit->setObjectName(QString::fromUtf8("Btnexit"));
-        Btnexit->setGeometry(QRect(772, 630, 111, 28));
+        Btnexit->setGeometry(QRect(792, 630, 91, 28));
         Btnexit->setCursor(QCursor(Qt::PointingHandCursor));
         widget_2 = new QWidget(information);
         widget_2->setObjectName(QString::fromUtf8("widget_2"));
@@ -125,14 +125,14 @@ public:
         homework->setCursor(QCursor(Qt::PointingHandCursor));
         BtnEdit = new QPushButton(information);
         BtnEdit->setObjectName(QString::fromUtf8("BtnEdit"));
-        BtnEdit->setGeometry(QRect(650, 630, 93, 28));
+        BtnEdit->setGeometry(QRect(670, 630, 93, 28));
         BtnEdit->setCursor(QCursor(Qt::PointingHandCursor));
         tableWidget = new QTableWidget(information);
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
         tableWidget->setGeometry(QRect(20, 160, 861, 441));
         BtnDrop = new QPushButton(information);
         BtnDrop->setObjectName(QString::fromUtf8("BtnDrop"));
-        BtnDrop->setGeometry(QRect(530, 630, 91, 28));
+        BtnDrop->setGeometry(QRect(550, 630, 91, 28));
         BtnDrop->setCursor(QCursor(Qt::PointingHandCursor));
 
         retranslateUi(information);
@@ -149,11 +149,11 @@ public:
         lbTitle->setText(QCoreApplication::translate("information", "\350\257\276 \347\250\213 \350\241\250", nullptr));
         schedule->setText(QCoreApplication::translate("information", "\350\257\276\347\250\213\350\241\250", nullptr));
         students->setText(QCoreApplication::translate("information", "\345\255\246\347\224\237", nullptr));
-        Btnexit->setText(QCoreApplication::translate("information", "\351\200\200\345\207\272(\344\270\215\344\277\235\345\255\230)", nullptr));
+        Btnexit->setText(QCoreApplication::translate("information", "\351\200\200\345\207\272/\346\224\276\345\274\203", nullptr));
         pushButton->setText(QCoreApplication::translate("information", "\345\217\226\346\266\210", nullptr));
-        BtnSearch->setText(QCoreApplication::translate("information", "\346\237\245\346\211\276", nullptr));
+        BtnSearch->setText(QCoreApplication::translate("information", "GO", nullptr));
         label->setText(QCoreApplication::translate("information", "\346\237\245\346\211\276\357\274\232", nullptr));
-        BtnAdd->setText(QCoreApplication::translate("information", "\346\267\273\345\212\240", nullptr));
+        BtnAdd->setText(QCoreApplication::translate("information", "GO", nullptr));
         BtnCancel->setText(QCoreApplication::translate("information", "\345\217\226\346\266\210", nullptr));
         label_2->setText(QCoreApplication::translate("information", "\346\267\273\345\212\240\357\274\232", nullptr));
         homework->setText(QCoreApplication::translate("information", "\344\275\234\344\270\232", nullptr));

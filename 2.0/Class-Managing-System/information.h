@@ -33,11 +33,13 @@ private slots:
     void on_pushButton_clicked();
     void on_BtnCancel_clicked();
     void on_BtnDrop_clicked();
+    void on_tableWidget_cellClicked(int row, int column);
 
 private:
     Ui::information *ui;
     int a=1;//1 for classes, 2 for students, 3 for homework
     bool CLICKED=false;
+    int x=0;
 };
 
 #endif // INFORMATION_H
