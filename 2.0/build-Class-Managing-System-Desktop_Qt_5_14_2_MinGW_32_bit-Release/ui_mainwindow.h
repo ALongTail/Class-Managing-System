@@ -10,15 +10,12 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLCDNumber>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenu>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
@@ -28,8 +25,6 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
-    QAction *action;
-    QAction *action_2;
     QWidget *centralwidget;
     QGridLayout *gridLayout_6;
     QWidget *widget_4;
@@ -54,9 +49,6 @@ public:
     QGridLayout *gridLayout_2;
     QLabel *lbleft;
     QLabel *lbright;
-    QMenuBar *menubar;
-    QMenu *menu;
-    QMenu *menu_2;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -64,10 +56,6 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(908, 670);
-        action = new QAction(MainWindow);
-        action->setObjectName(QString::fromUtf8("action"));
-        action_2 = new QAction(MainWindow);
-        action_2->setObjectName(QString::fromUtf8("action_2"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         gridLayout_6 = new QGridLayout(centralwidget);
@@ -202,22 +190,9 @@ public:
         gridLayout_6->addWidget(widget_3, 0, 1, 1, 1);
 
         MainWindow->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(MainWindow);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 908, 26));
-        menu = new QMenu(menubar);
-        menu->setObjectName(QString::fromUtf8("menu"));
-        menu_2 = new QMenu(menubar);
-        menu_2->setObjectName(QString::fromUtf8("menu_2"));
-        MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         MainWindow->setStatusBar(statusbar);
-
-        menubar->addAction(menu_2->menuAction());
-        menubar->addAction(menu->menuAction());
-        menu->addAction(action);
-        menu->addAction(action_2);
 
         retranslateUi(MainWindow);
 
@@ -227,8 +202,6 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "\347\217\255\347\272\247\347\256\241\347\220\206\347\263\273\347\273\237", nullptr));
-        action->setText(QCoreApplication::translate("MainWindow", "\345\212\237\350\203\275\350\257\264\346\230\216", nullptr));
-        action_2->setText(QCoreApplication::translate("MainWindow", "\345\205\263\344\272\216..", nullptr));
         BtnInfo->setText(QCoreApplication::translate("MainWindow", "\346\237\245\347\234\213/\344\277\256\346\224\271\344\277\241\346\201\257", nullptr));
         BtnExit->setText(QCoreApplication::translate("MainWindow", "\351\200\200\345\207\272", nullptr));
         BtnHWork->setText(QCoreApplication::translate("MainWindow", "\344\275\234\344\270\232\345\275\225\345\205\245", nullptr));
@@ -240,8 +213,6 @@ public:
         BtnSwitch->setText(QCoreApplication::translate("MainWindow", "\350\207\252\344\271\240", nullptr));
         lbleft->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         lbright->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        menu->setTitle(QCoreApplication::translate("MainWindow", "\345\270\256\345\212\251", nullptr));
-        menu_2->setTitle(QCoreApplication::translate("MainWindow", "\345\210\207\346\215\242", nullptr));
     } // retranslateUi
 
 };
