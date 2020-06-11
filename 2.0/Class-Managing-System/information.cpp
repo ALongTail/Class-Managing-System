@@ -146,7 +146,8 @@ void information::on_BtnDrop_clicked()
 {
     /*------------------drop the highlighted----------------------*/
     dbconnect con;
-    con.del(Tab,x);
+    QString id=ui->tableWidget->item(x,0)->text();
+    con.del(Tab,id);
     imax--;
     ui->tableWidget->removeRow(x);
     ui->BtnDrop->setEnabled(false);
