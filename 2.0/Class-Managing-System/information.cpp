@@ -22,7 +22,6 @@ information::~information()
 
 void information::on_Btnexit_clicked()
 {
-    /*-----------remind------------*/
     this->close();
 }
 
@@ -70,13 +69,29 @@ void information::display(){
 
 }
 
-/*---------------handle----------------*/
+/*--------------------handle-------------------*/
 void information::on_BtnSearch_clicked()
 {
     /*------------------search-----------------*/
     QString s=ui->textEdit->toPlainText();
     ui->textEdit->clear();
-    //dbconnect con; con.search(s);
+    dbconnect con;
+    QList<int> li=con.search(Tab,jmax,s);
+    int ii=li.size();
+    int l[ii];//get the to-keep-items
+    for(int i=0;i<ii;i++){
+        l[i]=li.takeFirst();
+    }
+    int iii=imax;
+    for(int i=iii-1;i>=0;i--){
+        bool flag=true;
+        for(int j=0;j<ii;j++){
+            if(i==l[j]){flag=false;break;}
+            }//if 留下 then 不去除
+        if(flag){
+            ui->tableWidget->removeRow(i);
+        }
+    }
 }
 
 void information::on_BtnAdd_clicked()
@@ -87,14 +102,15 @@ void information::on_BtnAdd_clicked()
     QString s=ui->textEdit_2->toPlainText();
     ui->tableWidget->setItem(x,0,new QTableWidgetItem(s));
     ui->textEdit_2->clear();
-    dbconnect con;
-    //con.add(Tab,s);imax++;
+    imax++;
+    CLICKED=false;
+    //dbconnect con;
+    //con.add(Tab,s);
 }
 
 void information::on_BtnEdit_clicked()
 {
-    /*-----------remind------------*/
-    /*-----------save into database------------*/
+    /*-------------------edit------------------*/
     dbconnect con;
     QStringList str;
     for(int i=0;i<imax;i++){
@@ -104,5 +120,23 @@ void information::on_BtnEdit_clicked()
         con.writeitem(Tab,str,jmax);
         str.clear();
     }
+}
 
+void information::on_pushButton_clicked()
+{
+    if(CLICKED==false){
+        ui->tableWidget->setRowCount(--imax);
+        ui->textEdit_2->clear();
+    }
+    CLICKED=true;
+}
+
+void information::on_BtnCancel_clicked()
+{
+    display();
+}
+
+void information::on_BtnDrop_clicked()
+{
+    /*------------------drop the highlighted----------------------*/
 }

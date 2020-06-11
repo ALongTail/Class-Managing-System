@@ -31,9 +31,16 @@ private slots:
     void on_BtnAdd_clicked();
     void on_BtnEdit_clicked();
 
+    void on_pushButton_clicked();
+
+    void on_BtnCancel_clicked();
+
+    void on_BtnDrop_clicked();
+
 private:
     Ui::information *ui;
     int a=1;//1 for classes, 2 for students, 3 for homework
+    bool CLICKED=false;
 };
 
 #endif // INFORMATION_H

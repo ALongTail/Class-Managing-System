@@ -25,6 +25,7 @@ public:
     QString readitem(int i,int j,QString s,bool &flag);
     void writeitem(QString Tab,QStringList s,int jmax);
     void add(QString Tab,QString s);
+    QList<int> search(QString Tab,int jmax,QString s);
 
     QString bond[11];//bond the homework datas
 };
