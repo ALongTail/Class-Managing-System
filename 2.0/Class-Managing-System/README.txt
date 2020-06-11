@@ -50,7 +50,7 @@ void homework_display(QString &,QString &) 从homework表中读取不为空的�
 QString readitem(int i,int j,QString s,bool &flag) 将s表按id字段排序，读取第i条记录第j字段内容并返回
 void writeitem（QString Tab,QStringList s,int jmax) 更新/添加Tab表中一条记录
 QList<int> search(QString Tab,int jmax,QString s) 将s表按id字段排序，逐条逐字段判断是否包含s，返回存储含有s的记录行数列表
-void del(QString Tab,int row) 将s表按id字段排序,删除第row行
+void del(QString Tab,QString id) 删除s表中id字段值为id的记录
 
 background.jpg 背景图
 ICON.ico 图标
