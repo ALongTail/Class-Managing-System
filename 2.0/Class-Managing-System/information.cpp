@@ -66,7 +66,6 @@ void information::display(){
     }
     imax=i-1;
     ui->tableWidget->setRowCount(imax);
-
 }
 
 /*--------------------handle-------------------*/
@@ -90,22 +89,22 @@ void information::on_BtnSearch_clicked()
             }//if 留下 then 不去除
         if(flag){
             ui->tableWidget->removeRow(i);
+            imax--;
         }
     }
 }
 
 void information::on_BtnAdd_clicked()
 {
-    /*--------------------add------------------*/
+    /*-------------------add-------------------*/
     int x=ui->tableWidget->rowCount();
     ui->tableWidget->insertRow(x);
     QString s=ui->textEdit_2->toPlainText();
     ui->tableWidget->setItem(x,0,new QTableWidgetItem(s));
+    for(int j=1;j<jmax;j++)ui->tableWidget->setItem(x,j,new QTableWidgetItem());
     ui->textEdit_2->clear();
     imax++;
     CLICKED=false;
-    //dbconnect con;
-    //con.add(Tab,s);
 }
 
 void information::on_BtnEdit_clicked()
@@ -122,7 +121,7 @@ void information::on_BtnEdit_clicked()
     }
 }
 
-void information::on_pushButton_clicked()
+void information::on_pushButton_clicked()//取消添加
 {
     if(CLICKED==false){
         ui->tableWidget->setRowCount(--imax);

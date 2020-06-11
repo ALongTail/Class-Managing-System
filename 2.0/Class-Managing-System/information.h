@@ -30,11 +30,8 @@ private slots:
     void on_BtnSearch_clicked();
     void on_BtnAdd_clicked();
     void on_BtnEdit_clicked();
-
     void on_pushButton_clicked();
-
     void on_BtnCancel_clicked();
-
     void on_BtnDrop_clicked();
 
 private:

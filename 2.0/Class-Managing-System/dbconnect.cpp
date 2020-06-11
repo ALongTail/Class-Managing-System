@@ -128,18 +128,6 @@ void dbconnect::writeitem(QString Tab,QStringList s,int jmax){
     if(query.exec())qDebug()<<"yes";
 }
 
-void dbconnect::add(QString Tab,QString s){
-    /*QSqlDatabase db=QSqlDatabase::database("sqlite");
-    QSqlQuery query(db);
-    if(s=="")s="999";
-    if(Tab=="classes")
-        query.exec(QString("INSERT INTO classes VALUES('"+s.trimmed().toInt()+"',null,null,null,null,null,null,null,null,null)"));
-    if(Tab=="students")
-        query.exec(QString("INSERT INTO students VALUES('"+s.trimmed().toInt()+"',null,null,null,null,null)"));
-    if(Tab=="homework")
-        query.exec(QString("INSERT INTO homework VALUES('"+s.trimmed()+"',null,null,null,null,null,null,null,null,null,null)"));
-*/}
-
 QList<int> dbconnect::search(QString Tab,int jmax,QString s){
     QSqlDatabase db=QSqlDatabase::database("sqlite");
     QSqlQuery query(db);

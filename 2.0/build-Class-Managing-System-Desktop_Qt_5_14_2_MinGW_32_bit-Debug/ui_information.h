@@ -42,6 +42,7 @@ public:
     QPushButton *homework;
     QPushButton *BtnEdit;
     QTableWidget *tableWidget;
+    QPushButton *BtnDrop;
 
     void setupUi(QDialog *information)
     {
@@ -58,11 +59,11 @@ public:
         lbTitle->setAlignment(Qt::AlignCenter);
         schedule = new QPushButton(information);
         schedule->setObjectName(QString::fromUtf8("schedule"));
-        schedule->setGeometry(QRect(40, 630, 93, 28));
+        schedule->setGeometry(QRect(20, 630, 93, 28));
         schedule->setCursor(QCursor(Qt::PointingHandCursor));
         students = new QPushButton(information);
         students->setObjectName(QString::fromUtf8("students"));
-        students->setGeometry(QRect(190, 630, 93, 28));
+        students->setGeometry(QRect(140, 630, 93, 28));
         students->setCursor(QCursor(Qt::PointingHandCursor));
         Btnexit = new QPushButton(information);
         Btnexit->setObjectName(QString::fromUtf8("Btnexit"));
@@ -120,15 +121,19 @@ public:
 
         homework = new QPushButton(information);
         homework->setObjectName(QString::fromUtf8("homework"));
-        homework->setGeometry(QRect(340, 630, 93, 28));
+        homework->setGeometry(QRect(260, 630, 93, 28));
         homework->setCursor(QCursor(Qt::PointingHandCursor));
         BtnEdit = new QPushButton(information);
         BtnEdit->setObjectName(QString::fromUtf8("BtnEdit"));
-        BtnEdit->setGeometry(QRect(640, 630, 93, 28));
+        BtnEdit->setGeometry(QRect(650, 630, 93, 28));
         BtnEdit->setCursor(QCursor(Qt::PointingHandCursor));
         tableWidget = new QTableWidget(information);
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
         tableWidget->setGeometry(QRect(20, 160, 861, 441));
+        BtnDrop = new QPushButton(information);
+        BtnDrop->setObjectName(QString::fromUtf8("BtnDrop"));
+        BtnDrop->setGeometry(QRect(530, 630, 91, 28));
+        BtnDrop->setCursor(QCursor(Qt::PointingHandCursor));
 
         retranslateUi(information);
 
@@ -153,6 +158,7 @@ public:
         label_2->setText(QCoreApplication::translate("information", "\346\267\273\345\212\240\357\274\232", nullptr));
         homework->setText(QCoreApplication::translate("information", "\344\275\234\344\270\232", nullptr));
         BtnEdit->setText(QCoreApplication::translate("information", "\347\241\256\350\256\244\344\277\256\346\224\271", nullptr));
+        BtnDrop->setText(QCoreApplication::translate("information", "\345\210\240\351\231\244\351\200\211\344\270\255", nullptr));
     } // retranslateUi
 
 };
