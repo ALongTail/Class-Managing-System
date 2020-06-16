@@ -43,7 +43,7 @@ QString dbconnect::clean_search(){
     QString toExec="select * from students where day='"+DATE.trimmed()+"'";
         if(query.exec(toExec))qDebug()<<"ok";
     while(query.next()){
-        StuOnDuty+=query.value(1).toString()+"——"+query.value(4).toString()+"\n"+"\n";
+        StuOnDuty+=query.value(1).toString()+"——"+query.value(5).toString()+"\n"+"\n";
     }qDebug()<<StuOnDuty;
     return StuOnDuty;
 }

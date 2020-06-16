@@ -8,7 +8,7 @@ information::information(QWidget *parent) :
     ui->setupUi(this);
     /*----------------background---------------*/
     setAutoFillBackground(true);
-    QPixmap pixmap = QPixmap("E:/hahahahaha/FINAL/-----------/2.0/Class-Managing-System/background.jpg");
+    QPixmap pixmap = QPixmap("C:/Class-Managing-System/background.jpg");
     QPalette palette(this->palette());
     palette.setBrush(QPalette::Background, QBrush(pixmap));
     this->setPalette(palette);

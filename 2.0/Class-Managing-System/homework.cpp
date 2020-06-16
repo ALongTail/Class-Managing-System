@@ -8,7 +8,7 @@ homework::homework(QWidget *parent) :
     ui->setupUi(this);
     setAutoFillBackground(true);
     /*--------------background------------*/
-    QPixmap pixmap = QPixmap("E:/hahahahaha/FINAL/-----------/2.0/Class-Managing-System/background.jpg");
+    QPixmap pixmap = QPixmap("C:/Class-Managing-System/background.jpg");
     QPalette palette(this->palette());
     palette.setBrush(QPalette::Background, QBrush(pixmap));
     this->setPalette(palette);
